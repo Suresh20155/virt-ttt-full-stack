@@ -1,1 +1,1 @@
-
+$ npm install typescript –global
