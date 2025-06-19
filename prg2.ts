@@ -1,4 +1,3 @@
-// Base User class
 class User {
   private username: string;
   private password: string; // ECMAScript private field
@@ -8,7 +7,7 @@ class User {
     this.password = password;
   }
 
-  // Method to set password securely
+  
   public setPassword(newPassword: string): void {
     if (newPassword.length >= 6) {
       this.password = newPassword;
@@ -18,8 +17,7 @@ class User {
     }
   }
 
-  // Method to validate password
-  public validatePassword(input: string): boolean {
+    public validatePassword(input: string): boolean {
     return this.password === input;
   }
 
@@ -27,13 +25,13 @@ class User {
     return this.username;
   }
 
-  // Only Admin can use this method (defined in subclass)
+  
   protected _forceResetPassword(newPassword: string): void {
     this.password = newPassword;
   }
 }
 
-// Admin class extends User and can reset other users' passwords
+
 class AdminUser extends User {
   constructor(username: string, password: string) {
     super(username, password);
